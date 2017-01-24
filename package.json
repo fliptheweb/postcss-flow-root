@@ -1,0 +1,12 @@
+{
+  "name": "postcss-flow-root",
+  "version": "0.0.1",
+  "description": "Clearfix fallback for display: flow-root",
+  "main": "index.js",
+  "repository": "git@github.com:fliptheweb/postcss-flow-root.git",
+  "author": "fliptheweb <itisshortemailaddress@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "postcss": "^5.2.11"
+  }
+}
