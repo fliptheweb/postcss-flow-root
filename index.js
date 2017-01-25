@@ -18,11 +18,10 @@ module.exports = postcss.plugin('postcss-display-flow-root', function(options) {
     
     root.walkRules(function(rule) {
       // NOTE: nothing to do, if element have overflow:hidden cuz it create own flow
-      haveOverflowHidden = false
+      var haveOverflowHidden = false;
       rule.walkDecls('overflow', function(decl) {
         if (decl.value == 'hidden') { haveOverflowHidden = true; }
-      })
-
+      });
       rule.walkDecls('display', function(decl) {
         if (decl.value == 'flow-root' && !haveOverflowHidden) {
           switch (options.fallback) {
