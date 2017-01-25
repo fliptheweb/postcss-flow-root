@@ -1,7 +1,7 @@
-## Clearfix fallback for display: flow-root
-Use `display: flow-root` without a mess today, just add clearfix fallback by that simple plugin. [Article about `flow-root`.](https://rachelandrew.co.uk/archives/2017/01/24/the-end-of-the-clearfix-hack/)
+## Fallback for display: flow-root
+Use `display: flow-root` without a mess today, just add fallback by that simple plugin. [Article about `flow-root`.](https://rachelandrew.co.uk/archives/2017/01/24/the-end-of-the-clearfix-hack/).
 
-Transform that:
+Transform that
 ```css
 .selector {
   display: flow-root;
@@ -11,12 +11,7 @@ to
 ```css
 .selector {
   display: flow-root;
-}
-
-.selector::after {
-  content: '';
-  display: table;
-  clear: both;
+  column-count: 1;
 }
 ```
 
@@ -29,11 +24,24 @@ or
 npm install --save-dev postcss-flow-root
 ```
 
-And add to your postcss plugins list, for example in `webpack`:
+### Usage
+Add `postcss-flow-root` to your plugins list, for example in `webpack`:
 ```js
 postcss: function () {
   return [
-    require('postcss-flow-root')()
+    require('postcss-flow-root')(options)
   ];
 }
 ```
+Be careful: use plugin before `autoprefixer`.
+
+### Options
+You can choose fallback for emulate flow-root. There is a [sandbox](http://codepen.io/SelenIT/pen/GrEbop) with all methods by @SelenIT2.
+```js
+{
+  fallback: 'column-count' (default) | 'clearfix' | 'overflow'
+}
+```
+- `column-count` - create, [browser support](http://caniuse.com/#feat=multicolumn) (IE10+);
+- `clearfix` - add [clearfix](https://css-tricks.com/snippets/css/clear-fix/) by pseudo-element;
+- `overflow` - use `overflow: hidden` fallback.
