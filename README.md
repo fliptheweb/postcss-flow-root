@@ -36,12 +36,12 @@ postcss: function () {
 Be careful: use plugin before `autoprefixer`.
 
 ### Options
-You can choose fallback for emulate flow-root. There is a [sandbox](http://codepen.io/SelenIT/pen/GrEbop) with all methods by @SelenIT2.
+You can choose fallback for emulate flow-root. There is a [sandbox](http://codepen.io/SelenIT/pen/GrEbop) with all methods by [@SelenIT](https://github.com/SelenIT).
 ```js
 {
   fallback: 'column-count' (default) | 'clearfix' | 'overflow'
 }
 ```
-- `column-count` - create, [browser support](http://caniuse.com/#feat=multicolumn) (IE10+);
+- `column-count` - create block formatting context for element, [browser support](http://caniuse.com/#feat=multicolumn) (IE10+);
 - `clearfix` - add [clearfix](https://css-tricks.com/snippets/css/clear-fix/) by pseudo-element;
 - `overflow` - use `overflow: hidden` fallback.
