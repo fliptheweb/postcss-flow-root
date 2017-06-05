@@ -9,7 +9,7 @@ module.exports = postcss.plugin('postcss-display-flow-root', function(options) {
   var options = Object.assign({}, DEFAULT_OPTIONS, options)
   
   return function(root, result) {
-    if (!AVAILABLE_FALLBACKS.includes(options.fallback)) {
+    if (AVAILABLE_FALLBACKS.indexOf(options.fallback) === -1) {
       result.warn(
         "Fallback option '" + options.fallback + "' isn`t available, choose from the followings: " + 
         AVAILABLE_FALLBACKS.join(', ') + "."
