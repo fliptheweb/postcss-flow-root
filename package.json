@@ -7,6 +7,6 @@
   "author": "fliptheweb <itisshortemailaddress@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "postcss": "^5.2.11"
+    "postcss": "^6.0.1"
   }
 }
